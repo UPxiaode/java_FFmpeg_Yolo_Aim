@@ -17,5 +17,9 @@
 <p>项目采用的是单线程 , 从获取帧信息到yolo推理 , 再到控制鼠标.一条路走到黑!<br>
 (延迟会很高 , 如果想要更快的速度可以改为"经典的多线程，生产者与消费者模式")</p>
 <p>关于YOLO的推理是用的ONNX Runtime CPU. 注意是CPU不是CUDA. 使用CPU的好处是你可以较方便的运行该项目.免去了CUDA的配置! (当然代价是跟高的延迟)</p>
-<p>因为项目的ONNX Runtime 推理用的java包太老了 , 因此将训练好的YOLO模型转".ONNX"时要注意IR版本要&lt;=9!</p>
+<h2 id="配置">配置</h2>
+<ul>
+<li>因为项目的ONNX Runtime 推理用的java包太老了 , 因此将训练好的YOLO模型转".ONNX"时要注意IR版本要&lt;=9!</li>
+<li>在Config_Constants这个类中,可以配置您的模型路径(modelPath),模型推理的图像尺寸(训练模型时的"imgsz=x?"这个参数),以及您的屏幕分辨率</li>
+</ul>
 
